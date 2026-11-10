@@ -14,8 +14,17 @@ The full rules are in [`.agents/PROTOCOL.md`](.agents/PROTOCOL.md).
 
 ## Install in a project
 
-Run this from the top folder of the project's git repository. It works for
-new and existing projects.
+Run the command for your system from the top folder of the project's git
+repository. It works for new and existing projects, and both commands
+produce the same files.
+
+**Windows (PowerShell):**
+
+```powershell
+irm https://raw.githubusercontent.com/starscream000/agent-protocol/main/install.ps1 | iex
+```
+
+**macOS, Linux, WSL, or Git Bash:**
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/starscream000/agent-protocol/main/install.sh | bash
@@ -23,13 +32,14 @@ curl -fsSL https://raw.githubusercontent.com/starscream000/agent-protocol/main/i
 
 Then review and commit:
 
-```bash
+```
 git status
-git add -A && git commit -m "protocol: install v1.0.0"
+git add -A
+git commit -m "protocol: install v1.0.0"
 ```
 
-The script needs `bash`, `git`, `curl`, and `tar`. On Windows, run it in
-WSL or Git Bash.
+The Windows command needs only `git` and the PowerShell that ships with
+Windows. The other needs `bash`, `git`, `curl`, and `tar`.
 
 ## Update a project to the newest protocol
 
@@ -96,5 +106,6 @@ something is added, the third for wording fixes.
 ```
 .agents/        The protocol itself, copied into every project
 scaffold/       Starter versions of the project-owned files
-install.sh      Installs or updates the protocol in a project
+install.ps1     Installs or updates the protocol in a project (Windows)
+install.sh      Installs or updates the protocol in a project (macOS, Linux)
 ```

@@ -1,0 +1,5 @@
+# Keep line endings stable on every operating system. Shell scripts break
+# if Windows converts them to CRLF.
+* text=auto eol=lf
+*.sh text eol=lf
+*.ps1 text eol=lf
